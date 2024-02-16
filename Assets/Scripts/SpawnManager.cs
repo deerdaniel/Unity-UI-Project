@@ -5,7 +5,9 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject obstaclePrefab;
+    public GameObject coinPrefab;
     private Vector3 spawnPos = new (25, 0, 0);
+    private Vector3 spawnPosCoin = new (25, 5, 0);
     private float startDelay = 2;
     private float repeatDelay = 2;
     private PlayerController playerControllerScript;
@@ -27,7 +29,8 @@ public class SpawnManager : MonoBehaviour
         if (!playerControllerScript.gameOver)
         {
             Instantiate(obstaclePrefab, spawnPos, obstaclePrefab.transform.rotation);
-        }
+			Instantiate(coinPrefab, spawnPosCoin, coinPrefab.transform.rotation);
+		}
         
     }
 }
